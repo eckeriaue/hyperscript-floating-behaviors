@@ -2,7 +2,9 @@ behavior Floating(reference)
     init
         hide me then
         set @data-is-open to 'false' then
-        append 'position: fixed; top: 0; left:0;' to my.style.cssText then
+        set my *position to 'fixed' then
+        set my *top to 0px then
+        set my *left to 0px then
     end
 
     on click from reference
