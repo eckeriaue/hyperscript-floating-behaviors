@@ -1,3 +1,8 @@
+def computePosition(ref, float)
+    set :position to FloatingUIDOM.computePosition(ref, float, { strategy: 'fixed' }) then
+    return :position
+end
+
 behavior Floating(reference)
     init
         hide me then
@@ -11,7 +16,7 @@ behavior Floating(reference)
         halt the event then
         show me then
         set @data-is-open to true then
-        set :position to FloatingUIDOM.computePosition(reference, me) then
+        set :position to computePosition(reference, me) then
         append `translate:${:position.x}px ${:position.y}px;` to my.style.cssText then
         show me then
         wait for click from window
