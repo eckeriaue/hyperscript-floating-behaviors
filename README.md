@@ -1,5 +1,6 @@
 floating behaviors for hyperscript
 
+[see demo](https://eckeriaue.github.io/hyperscript-floating-behaviors/)
 
 ## todo
 
