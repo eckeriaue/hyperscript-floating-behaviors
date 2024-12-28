@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/hyperscript" src="./src/floating._hs"></script>
+        <script src="https://unpkg.com/hyperscript.org@0.9.13"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@floating-ui/core@1.6.8"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@floating-ui/dom@1.6.12"></script>
+
+        <style>
+            .hidden {
+                display: none;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="ref"> is ref </div>
+
+        <template _="install Floating(reference: #ref)">
+            <div> is floated </div>
+        </template>
+
+    </body>
+</html>

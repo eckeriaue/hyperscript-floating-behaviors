@@ -1,0 +1,18 @@
+behavior Floating(reference)
+    init
+        set my.style.positon to 'fixed' then
+        set local isOpen to false
+    end
+
+    on click from reference
+        halt the event then
+        toggle .hidden on me then
+
+        set position to FloatingUIDOM.computePosition(me, reference) then
+        log position then
+        set my.style.top to position.x + 'px' then
+
+        on click from window
+        add .hidden to me then
+    end
+end

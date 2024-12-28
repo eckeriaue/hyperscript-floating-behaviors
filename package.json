@@ -1,0 +1,19 @@
+{
+  "name": "hyperscript-floating-behaviors",
+  "version": "1.0.0",
+  "description": "floating behaviors for hyperscript",
+  "main": "./src/Floating._hs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eckeriaue/hyperscript-floating-behaviors.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eckeriaue/hyperscript-floating-behaviors/issues"
+  },
+  "homepage": "https://github.com/eckeriaue/hyperscript-floating-behaviors#readme"
+}
