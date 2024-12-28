@@ -1,7 +1,7 @@
 behavior Floating(reference)
     init
         hide me then
-        set @data-is-open to 'false' then
+        set @data-is-open to false then
         set my *position to 'fixed' then
         set my *top to 0px then
         set my *left to 0px then
@@ -10,12 +10,12 @@ behavior Floating(reference)
     on click from reference
         halt the event then
         show me then
-        set @data-is-open to 'true' then
+        set @data-is-open to true then
         set :position to FloatingUIDOM.computePosition(reference, me) then
-        append 'translate:'+:position.x+'px '+:position.y+'px;' to my.style.cssText then
+        append `translate:${:position.x}px ${:position.y}px;` to my.style.cssText then
         show me then
         wait for click from window
-            set @data-is-open to 'false'
+            set @data-is-open to false
             hide me
     end
 end
