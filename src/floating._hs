@@ -5,22 +5,15 @@ behavior Floating(reference)
         append 'position: fixed; top: 0; left:0;' to my.style.cssText then
     end
 
-    on click from window
-        hide me then
-        set @data-is-open to 'false' then
-    end
-
     on click from reference
         halt the event then
-        if @data-is-open == 'false'
-            set @data-is-open to 'true' then
-            set :position to FloatingUIDOM.computePosition(reference, me) then
-            append 'translate:'+:position.x+'px '+:position.y+'px;' to my.style.cssText then
-            show me then
-        else
+        show me then
+        set @data-is-open to 'true' then
+        set :position to FloatingUIDOM.computePosition(reference, me) then
+        append 'translate:'+:position.x+'px '+:position.y+'px;' to my.style.cssText then
+        show me then
+        wait for click from window
             set @data-is-open to 'false'
             hide me
-        then
-
     end
 end
