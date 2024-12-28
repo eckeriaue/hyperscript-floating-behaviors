@@ -1,18 +1,26 @@
 behavior Floating(reference)
     init
-        set my.style.positon to 'fixed' then
-        set local isOpen to false
+        hide me then
+        set @data-is-open to 'false' then
+        append 'position: fixed; top: 0; left:0;' to my.style.cssText then
+    end
+
+    on click from window
+        hide me then
+        set @data-is-open to 'false' then
     end
 
     on click from reference
         halt the event then
-        toggle .hidden on me then
+        if @data-is-open == 'false'
+            set @data-is-open to 'true' then
+            set :position to FloatingUIDOM.computePosition(reference, me) then
+            append 'translate:'+:position.x+'px '+:position.y+'px;' to my.style.cssText then
+            show me then
+        else
+            set @data-is-open to 'false'
+            hide me
+        then
 
-        set position to FloatingUIDOM.computePosition(me, reference) then
-        log position then
-        set my.style.top to position.x + 'px' then
-
-        on click from window
-        add .hidden to me then
     end
 end
